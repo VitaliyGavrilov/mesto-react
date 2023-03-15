@@ -55,7 +55,7 @@ function Main(props) {
       <section className="element">
       { cards.map((cardItem) => (
         < Card
-          key = { cardItem._id }
+          key = { cardItem.cardId }
           link = { cardItem.link }
           name = { cardItem.name }
           like = { cardItem.likes.length }

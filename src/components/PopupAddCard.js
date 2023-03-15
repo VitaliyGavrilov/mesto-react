@@ -9,10 +9,10 @@ function PopupAddCard (props) {
       name = 'add-card'
       title = 'Новое место'>
        <input className="popup__input popup__input_card-name"
-           type="text" name="name" id="card-name" placeholder="Название" autocomplete="off" minlength="2" maxlength="30" required/>
+           type="text" name="name" id="card-name" placeholder="Название" autoComplete="off" minLength="2" maxLength="30" required/>
         <span className="popup__input-error" id="card-name-error"></span>
         <input className="popup__input popup__input_img-link"
-           type="url" name="link" id="link-img" placeholder="Сылка на картинку" autocomplete="off" minlength="2" required/>
+           type="url" name="link" id="link-img" placeholder="Сылка на картинку" autoComplete="off" minLength="2" required/>
         <span className="popup__input-error" id="link-img-error"></span>
     </PopupWithForm>
   )
