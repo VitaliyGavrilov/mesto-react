@@ -13,7 +13,7 @@
       }).then(this._checkResponse);
     }
     //для изменения информации о пользователе
-    patchUserInfo({ name, profession }) {
+    patchUserInfo( name, profession ) {
       return fetch(`${this._baseUrl}/users/me`, {
         method: "PATCH",
         headers: this._headers,
@@ -31,7 +31,7 @@
       }).then(this._checkResponse);
     }
     //для загрузки карточек на сервер
-    postCard({ name, link }) {
+    postCard( {name, link} ) {
       return fetch(`${this._baseUrl}/cards`, {
         method: "POST",
         headers: this._headers,
@@ -50,7 +50,7 @@
     }
     //-аватар:
     //изменение аватара
-    patchUserAvatar({ avatar }) {
+    patchUserAvatar( {avatar} ) {
       return fetch(`${this._baseUrl}/users/me/avatar`, {
         method: "PATCH",
         headers: this._headers,
@@ -59,20 +59,19 @@
         }),
       }).then(this._checkResponse);
     }
-    //-лайки:
-    //добавлене лайка
-    putLike(id) {
-      return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+    //-лайки
+    changeLikeCardStatus(id, isLiked) {
+      if (isLiked){
+        return fetch(`${this._baseUrl}/cards/${id}/likes`, {
         method: "PUT",
         headers: this._headers,
       }).then(this._checkResponse);
-    }
-    //удаление лайка
-    deleteLike(id) {
-      return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+      } else {
+        return fetch(`${this._baseUrl}/cards/${id}/likes`, {
         method: "DELETE",
         headers: this._headers,
       }).then(this._checkResponse);
+      }
     }
     //--приватные методы:
     //для проверки ответа с сервера
