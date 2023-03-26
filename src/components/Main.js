@@ -4,11 +4,7 @@ import Card from './Card.js';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 
 function Main(props) {
-  // Подписка на контекст
-  const userData = useContext(CurrentUserContext);
-  // Cтейт-переменные:
-  
-
+  const userData = useContext(CurrentUserContext);// Подписка на контекст
   return (
     <main className="content">
 
@@ -32,7 +28,7 @@ function Main(props) {
       <section className="element">
       { props.cards.map((cardItem) => (
         < Card
-          key = { cardItem.cardId }
+          key = { cardItem._id }
           link = { cardItem.link }
           name = { cardItem.name }
           like = { cardItem.likes.length }

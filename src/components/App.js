@@ -81,16 +81,17 @@ function App() {
       link: cardItem.link
     })
   }
-  // Обработчик лайка
+  // --Лайки
+  // -Обработчик лайка
   function handleCardLike(card) {
-  // Снова проверяем, есть ли уже лайк на этой карточке
+  // -Снова проверяем, есть ли уже лайк на этой карточке
   const isLiked = card.likes.some(i => i._id === currentUser._id);
-  // Отправляем запрос в API и получаем обновлённые данные карточки
+  // -Отправляем запрос в API и получаем обновлённые данные карточки
   api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
     setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
     });
   }
-  // Функция для закрытия всех попапов
+  // --Функция для закрытия всех попапов
   function closeAllPopups () {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
@@ -98,7 +99,7 @@ function App() {
     setIsDeleteCardPopupOpen(false);
     setIsImagePopupOpen(false);
   }
-  // Сборка страницы из компонентов
+  // ---Сборка страницы из компонентов
   return (
     < CurrentUserContext.Provider value={ currentUser } >
     <div className="page">
